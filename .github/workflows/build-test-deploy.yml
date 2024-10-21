@@ -30,12 +30,6 @@ jobs:
         uses: actions/setup-node@v3
         with: 
           node-version: '18.x'
-
-      - name: Configure ESLint
-        run: npx eslint --init
-        env:
-          CI: true
           
       - run: npm install
-      - run: npm install --save-dev eslint
       - run: npm test -- --quiet

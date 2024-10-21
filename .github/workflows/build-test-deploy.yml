@@ -32,4 +32,5 @@ jobs:
           node-version: '18.x'
           
       - run: npm install
+      - run: npm install --save-dev eslint
       - run: npm test

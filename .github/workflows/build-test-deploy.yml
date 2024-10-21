@@ -38,4 +38,4 @@ jobs:
           
       - run: npm install
       - run: npm install --save-dev eslint
-      - run: npm test
+      - run: npm test -- --quiet

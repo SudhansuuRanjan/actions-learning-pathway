@@ -32,6 +32,4 @@ jobs:
           node-version: '18.x'
           
       - run: npm install
-      - name: Set up ESLint
-        run: npx eslint --init --quiet  # This prevents the prompt
-      - run: npm test -- --quiet
+      - run: npm test

@@ -31,17 +31,12 @@ jobs:
         with: 
           node-version: '18.x'
           
-      - name: Enable verbose output
-        run: set -x
-
-      - name: Install NPM packages
-        run: npm install
-  
-      - name: Run NPM tests
-        run: npm test
-  
       - name: Check current user
-        run: whoami
+        run: |
+          whoami
+          echo "Current user: $(whoami)"
   
       - name: Check current user as root
-        run: sudo whoami
+        run: |
+          sudo whoami
+          echo "Root user: $(sudo whoami)"

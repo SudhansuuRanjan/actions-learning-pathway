@@ -31,7 +31,17 @@ jobs:
         with: 
           node-version: '18.x'
           
-      - run: npm install
-      - run: npm test
-      - run: whoami
-      - run: sudo whoami
+      - name: Enable verbose output
+        run: set -x
+
+      - name: Install NPM packages
+        run: npm install
+  
+      - name: Run NPM tests
+        run: npm test
+  
+      - name: Check current user
+        run: whoami
+  
+      - name: Check current user as root
+        run: sudo whoami

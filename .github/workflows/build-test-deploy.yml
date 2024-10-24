@@ -3,20 +3,20 @@ name: build-test-deploy
 on: push
 
 jobs: 
-  # build:
-  #   runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
     
-  #   steps: 
-  #     - name: Check out repo
-  #       uses: actions/checkout@v3
+    steps: 
+      - name: Check out repo
+        uses: actions/checkout@v3
         
-  #     - name: use node.js
-  #       uses: actions/setup-node@v3
-  #       with: 
-  #         node-version: '18.x'
+      - name: use node.js
+        uses: actions/setup-node@v3
+        with: 
+          node-version: '18.x'
           
-  #     - run: npm install
-  #     - run: npm run build
+      - run: npm install
+      - run: npm run build
       
   test:
     # needs: build
@@ -32,6 +32,6 @@ jobs:
           node-version: '18.x'
           
       - run: npm install
-      - run: npm install --save-dev eslint
-      - run: npm install --save-dev @next/eslint-plugin-next
       - run: npm test
+      - run: whoami
+      - run: sudo whoami
